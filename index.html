@@ -12,24 +12,29 @@
 <body class="container">
     <article class="start">
         <h1 class="mt-5 text-center">내가 만약 동물이라면?</h1>
-        <button type="button" class="btn btn-primary mt-5" onclick='start();'>테스트 시작하기</button>    
+        <button type="button" class="button1" style="animation: 0.3s ease 0s 1 normal forwards running fade-in;" onclick='start();'>테스트 시작하기</button>    
     </article> 
     
 
     <article class="question">
         <div class="progress mt-5">
-            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
-        </div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bggreen" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+          </div>
         <h2 id ="title" class="text-center mt-5">문제</h2>
         <input id="type" type= "hidden" value="EI">
-        <button id ="A" type="button" class="btn btn-primary mt-5">테스트 시작하기</button>    
-        <button id ="B" type="button" class="btn btn-primary mt-5">테스트 시작하기</button>    
+        <button id ="A" type="button" class="button1" style="animation: 0.3s ease 0s 1 normal forwards running fade-in;">테스트 시작하기</button>    
+        <button id ="B" type="button" class="button1" style="animation: 0.3s ease 0s 1 normal forwards running fade-in;">테스트 시작하기</button>    
     </article> 
 
     <article class="result">
-        <img src="" alt="">
-        <h2 id="animal">동물이름</h2>
-        <h3 id="explain">설명</h3>
+        <img id = "img" src="lion.jpg" class="rounded-circle" alt="animal">
+        <h2 id="animal" class="text-center mt-5">동물이름</h2>
+        <h3 id="explain" class="text-center mt-5">설명</h3>
+        
+        
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="share addthis_inline_share_toolbox"></div>
+                 
     </article>
     
     <input type="hidden" id="EI" value="0">
@@ -57,6 +62,26 @@
             12: {"title": "문제 12번", "type": "JP", "A":"J", "B":"P"}
 
         }
+
+        var result = {
+            "ENTP" : {"animal" : "관심이 필요한 다람쥐", "explain" : "관심 다람쥐 설명 설명", "img": "lion.jpg"},
+            "ENTJ" : {"animal" : "관심이 필요한 다람쥐", "explain" : "관심 다람쥐 설명 설명", "img": "lion.jpg"},
+            "ENFP" : {"animal" : "배려밖에 모르는 순둥 강아지", "explain" : "배려 강아지 설명", "img": "lion.jpg"},
+            "ENFJ" : {"animal" : "배려밖에 모르는 순둥 강아지", "explain" : "배려 강아지 설명", "img": "lion.jpg"},
+            "ESTJ" : {"animal" : "배려밖에 모르는 순둥 강아지", "explain" : "배려 강아지 설명", "img": "lion.jpg"},
+            "ESFP" : {"animal" : "배려밖에 모르는 순둥 강아지", "explain" : "배려 강아지 설명", "img": "lion.jpg"},
+            "ESFJ" : {"animal" : "배려밖에 모르는 순둥 강아지", "explain" : "배려 강아지 설명", "img": "lion.jpg"},
+            "INTP" : {"animal" : "생각에 취한 햄스터", "explain" : "햄스터 설명", "img": "lion.jpg"},
+            "ISTJ" : {"animal" : "침착한 여우", "explain" : "여우 설명", "img": "lion.jpg"},
+            "INFP" : {"animal" : "관심이 필요한 다람쥐", "explain" : "다람쥐 설명", "img": "lion.jpg"},
+            "INFJ" : {"animal" : "자발적 아싸 판다", "explain" : "판다설명", "img": "lion.jpg"},
+            "ISTP" : {"animal" : "자발적 아싸 판다", "explain" : "판다설명", "img": "lion.jpg"},
+            "ISTJ" : {"animal" : "자발적 아싸 판다", "explain" : "판다설명", "img": "lion.jpg"},
+            "ISTJ" : {"animal" : "무뚝뚝 고양이", "explain" : "고양이 설명", "img": "lion.jpg"},
+            "ISFP" : {"animal" : "자발적 아싸 판다", "explain" : "판다설명", "img": "lion.jpg"},
+            "ISFJ" : {"animal" : "자발적 아싸 판다", "explain" : "판다설명", "img": "lion.jpg"},
+            }
+
         function start() {
             $(".start").hide();
             $(".question").show();
@@ -72,22 +97,39 @@
         $("#B").click(function(){
             next();
         })
+
         function next(){
             if (num == 13) {
+
                 $(".question").hide();
                 $(".result").show();
-            }
-            $(".progress-bar").attr('style', 'width: calc(100/12*'+num+'%)');
-            $("#title").html(q[num]["title"])
-            $("#type").val(q[num]["type"]);
-            $("#A").html(q[num]["A"])
-            $("#B").html(q[num]["B"])
+                var mbti = "";
+                $("#EI").val() < 2 ? mbti = mbti +"I" : mbti = mbti + "E"
+                $("#SN").val() < 2 ? mbti = mbti +"N" : mbti = mbti + "S"
+                $("#TF").val() < 2 ? mbti = mbti +"F" : mbti = mbti + "T"
+                $("#JP").val() < 2 ? mbti = mbti +"P" : mbti = mbti + "J"
+                alert(mbti);
+                $("#img").attr("src", result[mbti]["img"]);
+                $("#animal").html(result[mbti]["animal"]);
+                $("#explain").html(result[mbti]["explain"]);
+
+            } else {
+                $(".progress-bar").attr('style', 'width: calc(100/12*'+num+'%)');
+                $("#title").html(q[num]["title"])
+                $("#type").val(q[num]["type"]);
+                $("#A").html(q[num]["A"])
+                $("#B").html(q[num]["B"])
             num++;
 
+            }
+            
             
         }
-
     </script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62d930b5313d6867"></script>
+
 </body>
 </html>
 

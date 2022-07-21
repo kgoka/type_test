@@ -1,3 +1,12 @@
+@font-face {
+    src: url(PyeongChangPeace-Light.ttf);
+    font-family: font1;
+}
+
+* {
+    font-family: "font1" !important;
+  }
+
 article {
     display: flex;
     flex-direction: column;
@@ -8,4 +17,49 @@ article {
 } 
 .result {
     display: none;
+}
+
+#img {
+
+    margin: 0 auto;
+}
+
+.share {
+    margin: 0 auto;
+}
+
+.button1 {
+    width : 30rem;
+    line-height: 50px;
+    background-color: #ffffff;
+    border : 2px solid#5B7B6A;
+    border-radius: 25px;
+    margin: 0 auto 15px auto;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.button1:hover {
+    transition : all 0.1s ease;
+    background-color: #5B7B6A;
+    color : white;
+}
+
+.button1.checked{
+    color : #ffffff;
+    background: #5B7B6A;
+    border: 2px solid #5B7B6A;
+}
+
+.button1:disabled{
+    color : #383432;
+}
+
+.button1.checked:disabled{
+    color : #ffffff;
+}
+
+.bggreen{
+    background-color: #5B7B6A;
 }
