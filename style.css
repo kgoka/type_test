@@ -5,6 +5,7 @@
 
 * {
     font-family: "font1" !important;
+    
   }
 
 article {
@@ -32,7 +33,7 @@ article {
     width : 30rem;
     line-height: 50px;
     background-color: #ffffff;
-    border : 2px solid#5B7B6A;
+    border : 2px solid#FFB8B9;
     border-radius: 25px;
     margin: 0 auto 15px auto;
     text-align: center;
@@ -42,14 +43,14 @@ article {
 
 .button1:hover {
     transition : all 0.1s ease;
-    background-color: #5B7B6A;
+    background-color: #FFB8B9;
     color : white;
 }
 
 .button1.checked{
     color : #ffffff;
-    background: #5B7B6A;
-    border: 2px solid #5B7B6A;
+    background: #FF8082;
+    border: 2px solid #FF8082;
 }
 
 .button1:disabled{
@@ -61,5 +62,5 @@ article {
 }
 
 .bggreen{
-    background-color: #5B7B6A;
+    background-color: #FFB8B9;
 }
