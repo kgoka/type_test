@@ -72,6 +72,9 @@ article {
     border: 2px solid #FF8082;
 }
 
+.logo1{
+    display: block; margin: 0px auto;
+}
 .button1:disabled{
     color : #383432;
 }
