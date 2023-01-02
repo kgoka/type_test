@@ -52,7 +52,7 @@ article {
     width : 100%;
     line-height: 50px;
     background-color: #ffffff;
-    border : 2px solid#FFB8B9;
+    border : 2px solid #FFB8B9;
     border-radius: 25px;
     margin: 0 auto 15px auto;
     text-align: center;
@@ -62,14 +62,14 @@ article {
 
 .button1:hover {
     transition : all 0.1s ease;
-    background-color: #FFB8B9;
+    background-color: #FF8082;
     color : white;
 }
 
 .button1.checked{
     color : #ffffff;
-    background: #FF8082;
-    border: 2px solid #FF8082;
+    background: #1c589c;
+    border: 2px solid #0f498c;
 }
 
 .logo1{
